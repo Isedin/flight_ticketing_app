@@ -67,6 +67,7 @@ class HomeScreen extends StatelessWidget {
                   bigText: "Upcoming flights",
                   smallText: "View all",
                 ),
+                const SizedBox(height: 20),
                 TicketView(),
               ],
             ),
