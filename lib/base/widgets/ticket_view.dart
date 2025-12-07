@@ -17,6 +17,7 @@ class TicketView extends StatelessWidget {
         margin: EdgeInsets.only(right: 16),
         child: Column(
           children: [
+            // blue part of the
             Container(
               padding: EdgeInsets.all(16),
               decoration: BoxDecoration(
@@ -72,25 +73,32 @@ class TicketView extends StatelessWidget {
                   // Show departure and arrival names wiht line
                   Row(
                     children: [
-                      Text(
-                        "New-York",
-                        style: AppStyles.headlineStyle3.copyWith(
-                          color: Colors.white,
+                      SizedBox(
+                        width: 100,
+                        child: Text(
+                          "New-York",
+                          style: AppStyles.headlineStyle4.copyWith(
+                            color: Colors.white,
+                          ),
                         ),
                       ),
                       Expanded(child: Container()),
                       Text(
                         "8H 30M",
-                        style: AppStyles.headlineStyle3.copyWith(
+                        style: AppStyles.headlineStyle4.copyWith(
                           color: Colors.white,
                         ),
                       ),
 
                       Expanded(child: Container()),
-                      Text(
-                        "London",
-                        style: AppStyles.headlineStyle3.copyWith(
-                          color: Colors.white,
+                      SizedBox(
+                        width: 100,
+                        child: Text(
+                          "London",
+                          textAlign: TextAlign.end,
+                          style: AppStyles.headlineStyle4.copyWith(
+                            color: Colors.white,
+                          ),
                         ),
                       ),
                     ],
@@ -98,17 +106,21 @@ class TicketView extends StatelessWidget {
                 ],
               ),
             ),
+            // circles and dots
             Container(
               height: 20,
               color: AppStyles.ticketOrange,
               child: Row(
                 children: [
                   BigCircle(isRight: false),
-                  Expanded(child: Container()),
+                  Expanded(
+                    child: AppLayoutBuilderWidget(randomDevider: 16, width: 8),
+                  ),
                   BigCircle(isRight: true),
                 ],
               ),
             ),
+            // orange part of the ticket
             Container(
               padding: EdgeInsets.all(16),
               decoration: BoxDecoration(
@@ -124,36 +136,22 @@ class TicketView extends StatelessWidget {
                   Row(
                     children: [
                       Text(
-                        "NYC",
+                        "1 May",
                         style: AppStyles.headlineStyle3.copyWith(
                           color: Colors.white,
                         ),
                       ),
                       Expanded(child: Container()),
-                      BigDot(),
-                      Expanded(
-                        child: Stack(
-                          children: [
-                            SizedBox(
-                              height: 24,
-                              child: AppLayoutBuilderWidget(randomDevider: 6),
-                            ),
-                            Center(
-                              child: Transform.rotate(
-                                angle: 1.57,
-                                child: Icon(
-                                  Icons.local_airport_rounded,
-                                  color: Colors.white,
-                                ),
-                              ),
-                            ),
-                          ],
+                      Text(
+                        "08:00 AM",
+                        style: AppStyles.headlineStyle3.copyWith(
+                          color: Colors.white,
                         ),
                       ),
-                      BigDot(),
+
                       Expanded(child: Container()),
                       Text(
-                        "LDN",
+                        "23",
                         style: AppStyles.headlineStyle3.copyWith(
                           color: Colors.white,
                         ),
@@ -165,14 +163,14 @@ class TicketView extends StatelessWidget {
                   Row(
                     children: [
                       Text(
-                        "New-York",
+                        "Date",
                         style: AppStyles.headlineStyle3.copyWith(
                           color: Colors.white,
                         ),
                       ),
                       Expanded(child: Container()),
                       Text(
-                        "8H 30M",
+                        "Departure Time",
                         style: AppStyles.headlineStyle3.copyWith(
                           color: Colors.white,
                         ),
@@ -180,7 +178,7 @@ class TicketView extends StatelessWidget {
 
                       Expanded(child: Container()),
                       Text(
-                        "London",
+                        "Number",
                         style: AppStyles.headlineStyle3.copyWith(
                           color: Colors.white,
                         ),
