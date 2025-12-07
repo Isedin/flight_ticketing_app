@@ -1,5 +1,6 @@
 import 'package:flight_ticketing_app/base/res/styles/app_styles.dart';
 import 'package:flight_ticketing_app/base/widgets/app_layout_builder_widget.dart';
+import 'package:flight_ticketing_app/base/widgets/big_circle.dart';
 import 'package:flight_ticketing_app/base/widgets/big_dot.dart';
 import 'package:flutter/material.dart';
 
@@ -11,7 +12,7 @@ class TicketView extends StatelessWidget {
     final size = MediaQuery.of(context).size;
     return SizedBox(
       width: size.width * 0.85,
-      height: 179,
+      height: 189,
       child: Container(
         margin: EdgeInsets.only(right: 16),
         child: Column(
@@ -98,9 +99,20 @@ class TicketView extends StatelessWidget {
               ),
             ),
             Container(
+              height: 20,
+              color: AppStyles.ticketOrange,
+              child: Row(
+                children: [
+                  BigCircle(isRight: false),
+                  Expanded(child: Container()),
+                  BigCircle(isRight: true),
+                ],
+              ),
+            ),
+            Container(
               padding: EdgeInsets.all(16),
               decoration: BoxDecoration(
-                color: Colors.orange,
+                color: AppStyles.ticketOrange,
                 borderRadius: BorderRadius.only(
                   bottomLeft: Radius.circular(21),
                   bottomRight: Radius.circular(21),
