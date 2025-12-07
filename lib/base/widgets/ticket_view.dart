@@ -1,4 +1,5 @@
 import 'package:flight_ticketing_app/base/res/styles/app_styles.dart';
+import 'package:flight_ticketing_app/base/widgets/app_column_text_layout.dart';
 import 'package:flight_ticketing_app/base/widgets/app_layout_builder_widget.dart';
 import 'package:flight_ticketing_app/base/widgets/big_circle.dart';
 import 'package:flight_ticketing_app/base/widgets/big_dot.dart';
@@ -113,54 +114,22 @@ class TicketView extends StatelessWidget {
                 children: [
                   //Show departure and arrival with icons first line
                   Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
-                      Text(
-                        "1 May",
-                        style: AppStyles.headlineStyle3.copyWith(
-                          color: Colors.white,
-                        ),
+                      AppColumnTextLayout(
+                        topText: "1 MAY",
+                        bottomText: "DATE",
+                        alignment: CrossAxisAlignment.start,
                       ),
-                      Expanded(child: Container()),
-                      Text(
-                        "08:00 AM",
-                        style: AppStyles.headlineStyle3.copyWith(
-                          color: Colors.white,
-                        ),
+                      AppColumnTextLayout(
+                        topText: "08:00 AM",
+                        bottomText: "Departure Time",
+                        alignment: CrossAxisAlignment.center,
                       ),
-
-                      Expanded(child: Container()),
-                      Text(
-                        "23",
-                        style: AppStyles.headlineStyle3.copyWith(
-                          color: Colors.white,
-                        ),
-                      ),
-                    ],
-                  ),
-                  SizedBox(height: 3),
-                  // Show departure and arrival names wiht line
-                  Row(
-                    children: [
-                      Text(
-                        "Date",
-                        style: AppStyles.headlineStyle3.copyWith(
-                          color: Colors.white,
-                        ),
-                      ),
-                      Expanded(child: Container()),
-                      Text(
-                        "Departure Time",
-                        style: AppStyles.headlineStyle3.copyWith(
-                          color: Colors.white,
-                        ),
-                      ),
-
-                      Expanded(child: Container()),
-                      Text(
-                        "Number",
-                        style: AppStyles.headlineStyle3.copyWith(
-                          color: Colors.white,
-                        ),
+                      AppColumnTextLayout(
+                        topText: "23",
+                        bottomText: "Number",
+                        alignment: CrossAxisAlignment.end,
                       ),
                     ],
                   ),
