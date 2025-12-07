@@ -2,6 +2,8 @@ import 'package:flight_ticketing_app/base/res/styles/app_styles.dart';
 import 'package:flight_ticketing_app/base/widgets/app_layout_builder_widget.dart';
 import 'package:flight_ticketing_app/base/widgets/big_circle.dart';
 import 'package:flight_ticketing_app/base/widgets/big_dot.dart';
+import 'package:flight_ticketing_app/base/widgets/text_style_fourth.dart';
+import 'package:flight_ticketing_app/base/widgets/text_style_third.dart';
 import 'package:flutter/material.dart';
 
 class TicketView extends StatelessWidget {
@@ -32,12 +34,7 @@ class TicketView extends StatelessWidget {
                   //Show departure and arrival with icons first line
                   Row(
                     children: [
-                      Text(
-                        "NYC",
-                        style: AppStyles.headlineStyle3.copyWith(
-                          color: Colors.white,
-                        ),
-                      ),
+                      TextStyleThird(text: "NYC"),
                       Expanded(child: Container()),
                       BigDot(),
                       Expanded(
@@ -61,12 +58,7 @@ class TicketView extends StatelessWidget {
                       ),
                       BigDot(),
                       Expanded(child: Container()),
-                      Text(
-                        "LDN",
-                        style: AppStyles.headlineStyle3.copyWith(
-                          color: Colors.white,
-                        ),
-                      ),
+                      TextStyleThird(text: "LDN"),
                     ],
                   ),
                   SizedBox(height: 3),
@@ -75,30 +67,17 @@ class TicketView extends StatelessWidget {
                     children: [
                       SizedBox(
                         width: 100,
-                        child: Text(
-                          "New-York",
-                          style: AppStyles.headlineStyle4.copyWith(
-                            color: Colors.white,
-                          ),
-                        ),
+                        child: TextStyleFourth(text: "New York"),
                       ),
                       Expanded(child: Container()),
-                      Text(
-                        "8H 30M",
-                        style: AppStyles.headlineStyle4.copyWith(
-                          color: Colors.white,
-                        ),
-                      ),
+                      TextStyleFourth(text: "8H 30M"),
 
                       Expanded(child: Container()),
                       SizedBox(
                         width: 100,
-                        child: Text(
-                          "London",
-                          textAlign: TextAlign.end,
-                          style: AppStyles.headlineStyle4.copyWith(
-                            color: Colors.white,
-                          ),
+                        child: TextStyleFourth(
+                          text: "London",
+                          align: TextAlign.end,
                         ),
                       ),
                     ],
