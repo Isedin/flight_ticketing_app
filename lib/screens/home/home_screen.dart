@@ -1,7 +1,10 @@
+import 'package:flight_ticketing_app/base/app_routes.dart';
 import 'package:flight_ticketing_app/base/res/media.dart';
 import 'package:flight_ticketing_app/base/res/styles/app_styles.dart';
+import 'package:flight_ticketing_app/base/utils/app_json.dart';
 import 'package:flight_ticketing_app/base/widgets/app_double_text.dart';
 import 'package:flight_ticketing_app/base/widgets/ticket_view.dart';
+import 'package:flight_ticketing_app/screens/home/widgets/hotel.dart';
 import 'package:fluentui_icons/fluentui_icons.dart';
 import 'package:flutter/material.dart';
 
@@ -18,6 +21,7 @@ class HomeScreen extends StatelessWidget {
           Container(
             padding: const EdgeInsets.symmetric(horizontal: 20),
             child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -63,12 +67,37 @@ class HomeScreen extends StatelessWidget {
                   ),
                 ),
                 const SizedBox(height: 40),
-                const AppDoubleText(
+                AppDoubleText(
                   bigText: "Upcoming flights",
                   smallText: "View all",
+                  func: () =>
+                      Navigator.pushNamed(context, AppRoutes.allTickets),
                 ),
                 const SizedBox(height: 20),
-                TicketView(),
+                SingleChildScrollView(
+                  scrollDirection: Axis.horizontal,
+                  child: Row(
+                    children: ticketList
+                        .take(2)
+                        .map((singleTicket) => TicketView(ticket: singleTicket))
+                        .toList(),
+                  ),
+                ),
+                AppDoubleText(
+                  bigText: "Hotels",
+                  smallText: "View all",
+                  func: () {},
+                ),
+                const SizedBox(height: 20),
+                SingleChildScrollView(
+                  scrollDirection: Axis.horizontal,
+                  child: Row(
+                    children: hotelList
+                        // .take(2)
+                        .map((singleHotel) => Hotel(hotel: singleHotel))
+                        .toList(),
+                  ),
+                ),
               ],
             ),
           ),
