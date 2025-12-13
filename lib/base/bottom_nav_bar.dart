@@ -1,5 +1,6 @@
 import 'package:flight_ticketing_app/screens/home/home_screen.dart';
 import 'package:flight_ticketing_app/screens/search/search_screen.dart';
+import 'package:flight_ticketing_app/screens/ticket/ticket_screen.dart';
 import 'package:fluentui_icons/fluentui_icons.dart';
 import 'package:flutter/material.dart';
 
@@ -15,7 +16,7 @@ class _BottomNavBarState extends State<BottomNavBar> {
   final appScreens = [
     const HomeScreen(),
     const SearchScreen(),
-    const Center(child: Text("Tickets")),
+    const TicketScreen(),
     const Center(child: Text("Profile")),
   ];
 
