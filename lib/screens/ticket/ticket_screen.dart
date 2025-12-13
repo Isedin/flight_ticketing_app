@@ -1,5 +1,7 @@
 import 'package:flight_ticketing_app/base/res/styles/app_styles.dart';
 import 'package:flight_ticketing_app/base/utils/app_json.dart';
+import 'package:flight_ticketing_app/base/widgets/app_column_text_layout.dart';
+import 'package:flight_ticketing_app/base/widgets/app_layout_builder_widget.dart';
 import 'package:flight_ticketing_app/base/widgets/ticket_view.dart';
 import 'package:flight_ticketing_app/screens/search/widgets/app_ticket_tabs.dart';
 import 'package:flutter/material.dart';
@@ -22,6 +24,64 @@ class TicketScreen extends StatelessWidget {
           Container(
             padding: const EdgeInsets.only(left: 16),
             child: TicketView(ticket: ticketList[0], isColor: true),
+          ),
+          const SizedBox(height: 1),
+          Container(
+            margin: const EdgeInsets.symmetric(horizontal: 16),
+            padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 20),
+            color: AppStyles.ticketColor,
+            child: Column(
+              children: [
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  children: [
+                    AppColumnTextLayout(
+                      topText: "Argent Flutter",
+                      bottomText: "VIP Passenger",
+                      alignment: CrossAxisAlignment.start,
+                      isColor: true,
+                    ),
+                    AppColumnTextLayout(
+                      topText: "05698 7456321",
+                      bottomText: "Passport",
+                      alignment: CrossAxisAlignment.end,
+                      isColor: true,
+                    ),
+                  ],
+                ),
+                SizedBox(height: 20),
+                AppLayoutBuilderWidget(
+                  randomDevider: 15,
+                  width: 5,
+                  isColor: false,
+                ),
+                SizedBox(height: 20),
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  children: [
+                    AppColumnTextLayout(
+                      topText: "2165 6543",
+                      bottomText: "Number of E-ticket",
+                      alignment: CrossAxisAlignment.start,
+                      isColor: true,
+                    ),
+                    AppColumnTextLayout(
+                      topText: "B2SG28",
+                      bottomText: "Booking code",
+                      alignment: CrossAxisAlignment.end,
+                      isColor: true,
+                    ),
+                  ],
+                ),
+                SizedBox(height: 20),
+                AppLayoutBuilderWidget(
+                  randomDevider: 15,
+                  width: 5,
+                  isColor: false,
+                ),
+                SizedBox(height: 20),
+              ],
+            ),
           ),
         ],
       ),
