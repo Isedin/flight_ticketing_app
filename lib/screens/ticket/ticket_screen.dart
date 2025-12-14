@@ -1,3 +1,5 @@
+import 'package:barcode_widget/barcode_widget.dart';
+import 'package:flight_ticketing_app/base/res/media.dart';
 import 'package:flight_ticketing_app/base/res/styles/app_styles.dart';
 import 'package:flight_ticketing_app/base/utils/app_json.dart';
 import 'package:flight_ticketing_app/base/widgets/app_column_text_layout.dart';
@@ -21,6 +23,7 @@ class TicketScreen extends StatelessWidget {
           const SizedBox(height: 20),
           AppTicketTabs(firstTab: "Upcoming", secondTab: "Previous"),
           const SizedBox(height: 20),
+          // black and white ticket
           Container(
             padding: const EdgeInsets.only(left: 16),
             child: TicketView(ticket: ticketList[0], isColor: true),
@@ -80,8 +83,64 @@ class TicketScreen extends StatelessWidget {
                   isColor: false,
                 ),
                 SizedBox(height: 20),
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  children: [
+                    Column(
+                      children: [
+                        Row(
+                          children: [
+                            Image.asset(
+                              AppMedia.visaCard,
+                              scale: 11,
+                              fit: BoxFit.contain,
+                              errorBuilder: (_, __, ___) =>
+                                  const Text("❌ visa asset missing"),
+                            ),
+                            Text("**** 2462", style: AppStyles.headlineStyle3),
+                          ],
+                        ),
+                        SizedBox(height: 5),
+                        Text("Payment Method", style: AppStyles.headlineStyle4),
+                      ],
+                    ),
+                    AppColumnTextLayout(
+                      topText: "299,99€",
+                      bottomText: "Price",
+                      alignment: CrossAxisAlignment.end,
+                      isColor: true,
+                    ),
+                  ],
+                ),
               ],
             ),
+          ),
+          // const SizedBox(height: 20),
+          // bottom of the ticket detail section
+          SizedBox(height: 1),
+          Container(
+            margin: const EdgeInsets.symmetric(horizontal: 16),
+            padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 20),
+            decoration: BoxDecoration(
+              color: AppStyles.ticketColor,
+              borderRadius: BorderRadius.only(
+                bottomLeft: Radius.circular(21),
+                bottomRight: Radius.circular(21),
+              ),
+            ),
+            child: ClipRRect(
+              borderRadius: BorderRadius.circular(15),
+              child: BarcodeWidget(
+                barcode: Barcode.qrCode(),
+                data: 'https://www.google.com',
+              ),
+            ),
+          ),
+          // colorful tiicket
+          const SizedBox(height: 20),
+          Container(
+            padding: const EdgeInsets.only(left: 16),
+            child: TicketView(ticket: ticketList[0]),
           ),
         ],
       ),
