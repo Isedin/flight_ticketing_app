@@ -12,7 +12,21 @@ class AllHotels extends StatelessWidget {
         title: Text('All Hotels'),
         backgroundColor: AppStyles.bgColor,
       ),
-      body: Center(child: Text('List of all hotels will be displayed here.')),
+      body: Padding(
+        padding: const EdgeInsets.all(8.0),
+        child: GridView.builder(
+          gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+            crossAxisCount: 4,
+            crossAxisSpacing: 16.0,
+            mainAxisSpacing: 16.0,
+            childAspectRatio: 1.0,
+          ),
+          itemCount: 20,
+          itemBuilder: (context, index) {
+            return Container(child: Text('Hotel $index'), color: Colors.amber);
+          },
+        ),
+      ),
     );
   }
 }
