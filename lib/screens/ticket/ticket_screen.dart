@@ -9,8 +9,22 @@ import 'package:flight_ticketing_app/screens/search/widgets/app_ticket_tabs.dart
 import 'package:flight_ticketing_app/screens/ticket/widgets/ticket_positioned_circle.dart';
 import 'package:flutter/material.dart';
 
-class TicketScreen extends StatelessWidget {
+class TicketScreen extends StatefulWidget {
   const TicketScreen({super.key});
+
+  @override
+  State<TicketScreen> createState() => _TicketScreenState();
+}
+
+class _TicketScreenState extends State<TicketScreen> {
+  late int ticketIndex = 0;
+  @override
+  void didChangeDependencies() {
+    var args = ModalRoute.of(context)!.settings.arguments as Map;
+    print("passed index: ${args['index']}");
+    ticketIndex = args['index'];
+    super.didChangeDependencies();
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -33,7 +47,10 @@ class TicketScreen extends StatelessWidget {
               // black and white ticket
               Container(
                 padding: const EdgeInsets.only(left: 16),
-                child: TicketView(ticket: ticketList[0], isColor: true),
+                child: TicketView(
+                  ticket: ticketList[ticketIndex],
+                  isColor: true,
+                ),
               ),
               const SizedBox(height: 1),
               Container(
@@ -159,7 +176,7 @@ class TicketScreen extends StatelessWidget {
               const SizedBox(height: 20),
               Container(
                 padding: const EdgeInsets.only(left: 16),
-                child: TicketView(ticket: ticketList[0]),
+                child: TicketView(ticket: ticketList[ticketIndex]),
               ),
             ],
           ),
