@@ -7,4 +7,5 @@ class AppMedia {
   static const hotel3 = "$_baseImage/hotel-3.jpg";
   static const planeSit = "$_baseImage/plane-sit.jpg";
   static const visaCard = "$_baseImage/visa-logo.png";
+  static const motel2 = "$_baseImage/motel-2.jpg";
 }

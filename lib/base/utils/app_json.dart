@@ -70,4 +70,16 @@ List<Map<String, dynamic>> hotelList = [
     'price_per_night': 120,
     'image': AppMedia.hotel3,
   },
+  {
+    'name': 'City Lodge',
+    'location': 'Frankfurt',
+    'price_per_night': 180,
+    'image': AppMedia.motel2,
+  },
+  // {
+  //   'name': 'Beach Resort',
+  //   'location': 'Nice',
+  //   'price_per_night': 220,
+  //   'image': AppMedia.hotel1,
+  // },
 ];

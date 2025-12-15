@@ -13,20 +13,23 @@ class AllHotels extends StatelessWidget {
         title: Text('All Hotels'),
         backgroundColor: AppStyles.bgColor,
       ),
-      body: Padding(
-        padding: const EdgeInsets.all(8.0),
-        child: GridView.builder(
-          gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
-            crossAxisCount: 2,
-            crossAxisSpacing: 16.0,
-            mainAxisSpacing: 16.0,
-            childAspectRatio: 0.85,
+      body: Container(
+        margin: const EdgeInsets.only(left: 5),
+        child: Padding(
+          padding: const EdgeInsets.all(8.0),
+          child: GridView.builder(
+            gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+              crossAxisCount: 2,
+              crossAxisSpacing: 16.0,
+              mainAxisSpacing: 16.0,
+              childAspectRatio: 0.85,
+            ),
+            itemCount: hotelList.length,
+            itemBuilder: (context, index) {
+              var singleHotel = hotelList[index];
+              return HotelGridView(hotel: singleHotel);
+            },
           ),
-          itemCount: hotelList.length,
-          itemBuilder: (context, index) {
-            var singleHotel = hotelList[index];
-            return HotelGridView(hotel: singleHotel);
-          },
         ),
       ),
     );
@@ -39,7 +42,7 @@ class HotelGridView extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final size = MediaQuery.of(context).size;
+    // final size = MediaQuery.of(context).size;
     return Container(
       padding: const EdgeInsets.all(8.0),
       // width: size.width * 0.6,
