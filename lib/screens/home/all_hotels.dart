@@ -1,3 +1,4 @@
+import 'package:flight_ticketing_app/base/app_routes.dart';
 import 'package:flight_ticketing_app/base/res/styles/app_styles.dart';
 import 'package:flight_ticketing_app/base/utils/app_json.dart';
 import 'package:flutter/material.dart';
@@ -43,64 +44,69 @@ class HotelGridView extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     // final size = MediaQuery.of(context).size;
-    return Container(
-      padding: const EdgeInsets.all(8.0),
-      // width: size.width * 0.6,
-      height: 350,
-      margin: const EdgeInsets.only(right: 8),
-      decoration: BoxDecoration(
-        color: AppStyles.primaryColor,
-        borderRadius: BorderRadius.circular(18),
-      ),
-      child: Column(
-        crossAxisAlignment: CrossAxisAlignment.start,
-        children: [
-          AspectRatio(
-            aspectRatio: 1.2,
-            child: Container(
-              // height: 180,
-              decoration: BoxDecoration(
-                color: AppStyles.primaryColor,
-                borderRadius: BorderRadius.circular(12),
-                image: DecorationImage(
-                  fit: BoxFit.cover,
-                  image: AssetImage(hotel['image']),
-                ),
-              ),
-            ),
-          ),
-          const SizedBox(height: 10),
-          Padding(
-            padding: const EdgeInsets.only(left: 12.0),
-            child: Text(
-              hotel['name'],
-              style: AppStyles.cardTitle.copyWith(color: AppStyles.kakiColor),
-            ),
-          ),
-          Row(
-            children: [
-              Padding(
-                padding: const EdgeInsets.only(left: 12.0),
-                child: Text(
-                  hotel['location'],
-                  style: AppStyles.cardSubtitle.copyWith(
-                    color: AppStyles.bgColor,
+    return GestureDetector(
+      onTap: () {
+        Navigator.pushNamed(context, AppRoutes.hotelDetail);
+      },
+      child: Container(
+        padding: const EdgeInsets.all(8.0),
+        // width: size.width * 0.6,
+        height: 350,
+        margin: const EdgeInsets.only(right: 8),
+        decoration: BoxDecoration(
+          color: AppStyles.primaryColor,
+          borderRadius: BorderRadius.circular(18),
+        ),
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            AspectRatio(
+              aspectRatio: 1.2,
+              child: Container(
+                // height: 180,
+                decoration: BoxDecoration(
+                  color: AppStyles.primaryColor,
+                  borderRadius: BorderRadius.circular(12),
+                  image: DecorationImage(
+                    fit: BoxFit.cover,
+                    image: AssetImage(hotel['image']),
                   ),
                 ),
               ),
-              SizedBox(width: 5),
-              Padding(
-                padding: const EdgeInsets.only(left: 5.0),
-                child: Text(
-                  "${hotel['price_per_night']}€/night",
-                  style: AppStyles.cardPrice.copyWith(
-                    color: AppStyles.kakiColor,
+            ),
+            const SizedBox(height: 10),
+            Padding(
+              padding: const EdgeInsets.only(left: 12.0),
+              child: Text(
+                hotel['name'],
+                style: AppStyles.cardTitle.copyWith(color: AppStyles.kakiColor),
+              ),
+            ),
+            Row(
+              children: [
+                Padding(
+                  padding: const EdgeInsets.only(left: 12.0),
+                  child: Text(
+                    hotel['location'],
+                    style: AppStyles.cardSubtitle.copyWith(
+                      color: AppStyles.bgColor,
+                    ),
                   ),
                 ),
-              ),
-            ],
-          ),
-        ],
+                SizedBox(width: 5),
+                Padding(
+                  padding: const EdgeInsets.only(left: 5.0),
+                  child: Text(
+                    "${hotel['price_per_night']}€/night",
+                    style: AppStyles.cardPrice.copyWith(
+                      color: AppStyles.kakiColor,
+                    ),
+                  ),
+                ),
+              ],
+            ),
+          ],
+        ),
       ),
     );
   }
