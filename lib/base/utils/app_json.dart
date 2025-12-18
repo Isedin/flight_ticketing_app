@@ -57,25 +57,37 @@ List<Map<String, dynamic>> hotelList = [
     'location': 'Hamburg',
     'price_per_night': 150,
     'image': AppMedia.motel1,
+    'details':
+        'The Grand Hotel is a refined waterfront property located near Hamburg’s iconic harbor. Guests enjoy spacious, elegantly furnished rooms, complimentary high-speed Wi-Fi, and a full-service wellness spa featuring a sauna and massage treatments. The hotel also offers an on-site restaurant serving international cuisine, a stylish lounge bar, and convenient access to shopping areas, cultural attractions, and public transportation. The Grand Hotel is a refined waterfront property located near Hamburg’s iconic harbor. Guests enjoy spacious, elegantly furnished rooms, complimentary high-speed Wi-Fi, and a full-service wellness spa featuring a sauna and massage treatments. The hotel also offers an on-site restaurant serving international cuisine, a stylish lounge bar, and convenient access to shopping areas, cultural attractions, and public transportation.',
+        'images': [
+          
+        ]
   },
   {
     'name': 'Four Seasons',
     'location': 'Berlin',
     'price_per_night': 200,
     'image': AppMedia.hotel2,
+    'details':
+        'Located in the heart of Berlin, the Four Seasons delivers a premium luxury experience designed for both leisure and business travelers. The hotel features beautifully designed rooms with panoramic city views, a rooftop swimming pool, a state-of-the-art fitness center, and fine dining options curated by top chefs. Guests benefit from personalized concierge services, spa facilities, and close proximity to major landmarks, museums, and nightlife.',
   },
   {
     'name': 'Mountain Inn',
     'location': 'Munich',
     'price_per_night': 120,
     'image': AppMedia.hotel3,
+    'details':
+        'Mountain Inn offers a warm and inviting atmosphere inspired by traditional alpine design. Perfect for relaxed stays, the hotel provides comfortable rooms, complimentary breakfast, and friendly staff focused on guest comfort. Its location allows easy access to Munich’s city center while offering a peaceful retreat after a busy day. Ideal for couples and solo travelers seeking comfort and value.',
   },
   {
     'name': 'City Lodge',
     'location': 'Frankfurt',
     'price_per_night': 180,
     'image': AppMedia.motel2,
+    'details':
+        'City Lodge is a modern, business-oriented hotel situated close to Frankfurt’s financial district. It offers well-equipped rooms with workspaces, fast and reliable internet, and soundproof interiors. Additional amenities include meeting rooms, a business lounge, an on-site café, and quick connections to airports and train stations. A great choice for professionals and short city stays.',
   },
+
   // {
   //   'name': 'Beach Resort',
   //   'location': 'Nice',

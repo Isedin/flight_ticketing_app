@@ -12,6 +12,7 @@ class HotelDetail extends StatefulWidget {
 class _HotelDetailState extends State<HotelDetail> {
   @override
   late int index = 0;
+  @override
   void didChangeDependencies() {
     var args = ModalRoute.of(context)!.settings.arguments as Map;
     print(args["index"]);
@@ -62,13 +63,14 @@ class _HotelDetailState extends State<HotelDetail> {
                       child: Text(
                         hotelList[index]['name'],
                         style: TextStyle(
-                          fontSize: 24,
+                          fontSize: 22,
                           color: Colors.white,
                           shadows: [
                             Shadow(
-                              offset: Offset(2.0, 2.0),
-                              blurRadius: 10.0,
-                              color: AppStyles.primaryColor,
+                              offset: Offset(-2.0, 2.0),
+                              // blurRadius: 10.0,
+                              // // color: AppStyles.primaryColor,
+                              color: Colors.red,
                             ),
                           ],
                         ),
@@ -83,9 +85,7 @@ class _HotelDetailState extends State<HotelDetail> {
             delegate: SliverChildListDelegate([
               Padding(
                 padding: EdgeInsets.all(16.0),
-                child: Text(
-                  "In this article, we explore the details of the hotel including amenities, location, reviews, and more. The hotel offers a variety of services to ensure a comfortable stay for all guests. Enjoy your visit!",
-                ),
+                child: ExpandedTextWidget(text: hotelList[index]['details']),
               ),
               Padding(
                 padding: EdgeInsets.all(16.0),
@@ -112,6 +112,48 @@ class _HotelDetailState extends State<HotelDetail> {
           ),
         ],
       ),
+    );
+  }
+}
+
+class ExpandedTextWidget extends StatefulWidget {
+  const ExpandedTextWidget({super.key, required this.text});
+  final String text;
+
+  @override
+  State<ExpandedTextWidget> createState() => _ExpandedTextWidgetState();
+}
+
+class _ExpandedTextWidgetState extends State<ExpandedTextWidget> {
+  bool isExpanded = false;
+  _toggleExpansion() {
+    setState(() {
+      isExpanded = !isExpanded;
+    });
+    print("the value of isExpanded: $isExpanded");
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    var textWidget = Text(
+      widget.text,
+      maxLines: isExpanded ? null : 6,
+      overflow: isExpanded ? TextOverflow.visible : TextOverflow.ellipsis,
+    );
+    return Column(
+      crossAxisAlignment: CrossAxisAlignment.start,
+      children: [
+        textWidget,
+        GestureDetector(
+          onTap: () {
+            _toggleExpansion();
+          },
+          child: Text(
+            isExpanded ? "Show Less" : "Read More",
+            style: AppStyles.textStyle.copyWith(color: AppStyles.primaryColor),
+          ),
+        ),
+      ],
     );
   }
 }
