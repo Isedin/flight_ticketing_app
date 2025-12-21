@@ -10,7 +10,6 @@ class HotelDetail extends StatefulWidget {
 }
 
 class _HotelDetailState extends State<HotelDetail> {
-  @override
   late int index = 0;
   @override
   void didChangeDependencies() {
@@ -94,23 +93,21 @@ class _HotelDetailState extends State<HotelDetail> {
                   style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
                 ),
               ),
-              SafeArea(
-                child: SizedBox(
-                  height: 200,
-                  child: ListView.builder(
-                    scrollDirection: Axis.horizontal,
-                    itemCount: hotelList[index]['images'].length,
-                    itemBuilder: (context, imagesIndex) {
-                      print("${hotelList[index]['images'].length}");
-                      return Container(
-                        margin: EdgeInsets.all(16.0),
-                        color: Colors.red,
-                        child: Image.asset(
-                          hotelList[index]['images'][imagesIndex],
-                        ),
-                      );
-                    },
-                  ),
+              SizedBox(
+                height: 200,
+                child: ListView.builder(
+                  scrollDirection: Axis.horizontal,
+                  itemCount: hotelList[index]['images'].length,
+                  itemBuilder: (context, imagesIndex) {
+                    print("${hotelList[index]['images'].length}");
+                    return Container(
+                      margin: EdgeInsets.all(16.0),
+                      color: Colors.red,
+                      child: Image.asset(
+                        hotelList[index]['images'][imagesIndex],
+                      ),
+                    );
+                  },
                 ),
               ),
             ]),
