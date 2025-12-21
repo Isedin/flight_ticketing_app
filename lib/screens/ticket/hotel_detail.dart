@@ -94,18 +94,23 @@ class _HotelDetailState extends State<HotelDetail> {
                   style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
                 ),
               ),
-              Container(
-                height: 200,
-                child: ListView.builder(
-                  scrollDirection: Axis.horizontal,
-                  itemCount: 10,
-                  itemBuilder: (context, index) {
-                    return Container(
-                      margin: EdgeInsets.all(16.0),
-                      color: Colors.red,
-                      child: Image.network("https://dummyimage.com/200x200"),
-                    );
-                  },
+              SafeArea(
+                child: SizedBox(
+                  height: 200,
+                  child: ListView.builder(
+                    scrollDirection: Axis.horizontal,
+                    itemCount: hotelList[index]['images'].length,
+                    itemBuilder: (context, imagesIndex) {
+                      print("${hotelList[index]['images'].length}");
+                      return Container(
+                        margin: EdgeInsets.all(16.0),
+                        color: Colors.red,
+                        child: Image.asset(
+                          hotelList[index]['images'][imagesIndex],
+                        ),
+                      );
+                    },
+                  ),
                 ),
               ),
             ]),
