@@ -15,6 +15,7 @@ class AppStyles {
   static const Color ticketColor = Color(0xFFFFFFFF);
   static const Color dotColor = Color(0xFF8ACCF7);
   static const Color planeSecondColor = Color(0xFFBACCF7);
+  static const Color profileLocationColor = Color(0xFFFEF4F3);
 
   static const TextStyle textStyle = TextStyle(
     fontSize: 16,
@@ -22,23 +23,23 @@ class AppStyles {
     fontWeight: FontWeight.w500,
   );
 
-  static const TextStyle headlineStyle1 = TextStyle(
+  static const TextStyle headLineStyle1 = TextStyle(
     fontSize: 26,
     fontWeight: FontWeight.bold,
     color: textColor,
   );
 
-  static const TextStyle headlineStyle2 = TextStyle(
+  static const TextStyle headLineStyle2 = TextStyle(
     fontSize: 18,
     fontWeight: FontWeight.bold,
     color: textColor,
   );
 
-  static const TextStyle headlineStyle3 = TextStyle(
+  static const TextStyle headLineStyle3 = TextStyle(
     fontSize: 17,
     fontWeight: FontWeight.w500,
   );
-  static TextStyle headlineStyle4 = TextStyle(
+  static TextStyle headLineStyle4 = TextStyle(
     fontSize: 14,
     fontWeight: FontWeight.w500,
     color: Colors.grey.shade500,
@@ -53,7 +54,7 @@ class AppStyles {
   static const TextStyle cardSubtitle = TextStyle(
     fontSize: 13,
     fontWeight: FontWeight.w500,
-    color: bgColor, // ili white, zavisi od pozadine
+    color: bgColor,
   );
 
   static const TextStyle cardPrice = TextStyle(

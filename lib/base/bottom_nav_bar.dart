@@ -1,4 +1,5 @@
 import 'package:flight_ticketing_app/screens/home/home_screen.dart';
+import 'package:flight_ticketing_app/screens/profile/profile.dart';
 import 'package:flight_ticketing_app/screens/search/search_screen.dart';
 import 'package:flight_ticketing_app/screens/ticket/ticket_screen.dart';
 import 'package:fluentui_icons/fluentui_icons.dart';
@@ -17,7 +18,7 @@ class _BottomNavBarState extends State<BottomNavBar> {
     const HomeScreen(),
     const SearchScreen(),
     const TicketScreen(),
-    const Center(child: Text("Profile")),
+    const ProfileScreen(),
   ];
 
   // Change our index for bottomNavBar

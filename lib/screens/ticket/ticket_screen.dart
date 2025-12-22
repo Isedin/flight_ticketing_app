@@ -128,14 +128,14 @@ class _TicketScreenState extends State<TicketScreen> {
                                 ),
                                 Text(
                                   "**** 2462",
-                                  style: AppStyles.headlineStyle3,
+                                  style: AppStyles.headLineStyle3,
                                 ),
                               ],
                             ),
                             SizedBox(height: 5),
                             Text(
                               "Payment Method",
-                              style: AppStyles.headlineStyle4,
+                              style: AppStyles.headLineStyle4,
                             ),
                           ],
                         ),

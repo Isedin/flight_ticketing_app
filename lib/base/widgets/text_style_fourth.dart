@@ -18,8 +18,8 @@ class TextStyleFourth extends StatelessWidget {
       text,
       textAlign: align,
       style: isColor == null
-          ? AppStyles.headlineStyle4.copyWith(color: Colors.white)
-          : AppStyles.headlineStyle4,
+          ? AppStyles.headLineStyle4.copyWith(color: Colors.white)
+          : AppStyles.headLineStyle4,
     );
   }
 }

@@ -41,7 +41,7 @@ class TicketPromotion extends StatelessWidget {
               SizedBox(height: 12),
               Text(
                 "20% discount on the early booking of this flight. Don't miss.",
-                style: AppStyles.headlineStyle2,
+                style: AppStyles.headLineStyle2,
               ),
             ],
           ),
@@ -63,7 +63,7 @@ class TicketPromotion extends StatelessWidget {
                     children: [
                       Text(
                         "Discount\nfor survey",
-                        style: AppStyles.headlineStyle2.copyWith(
+                        style: AppStyles.headLineStyle2.copyWith(
                           fontWeight: FontWeight.bold,
                           color: Colors.white,
                         ),
@@ -72,7 +72,7 @@ class TicketPromotion extends StatelessWidget {
                       SizedBox(height: 10),
                       Text(
                         "Take the survey about our services and get discount",
-                        style: AppStyles.headlineStyle2.copyWith(
+                        style: AppStyles.headLineStyle2.copyWith(
                           fontWeight: FontWeight.w500,
                           color: Colors.white,
                           fontSize: 18,
@@ -110,7 +110,7 @@ class TicketPromotion extends StatelessWidget {
                 children: [
                   Text(
                     "Take love",
-                    style: AppStyles.headlineStyle2.copyWith(
+                    style: AppStyles.headLineStyle2.copyWith(
                       color: Colors.white,
                     ),
                   ),

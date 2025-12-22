@@ -36,7 +36,7 @@ class Hotel extends StatelessWidget {
             padding: const EdgeInsets.only(left: 15.0),
             child: Text(
               hotel['name'],
-              style: AppStyles.headlineStyle1.copyWith(
+              style: AppStyles.headLineStyle1.copyWith(
                 color: AppStyles.kakiColor,
               ),
             ),
@@ -46,7 +46,7 @@ class Hotel extends StatelessWidget {
             padding: const EdgeInsets.only(left: 15.0),
             child: Text(
               hotel['location'],
-              style: AppStyles.headlineStyle3.copyWith(
+              style: AppStyles.headLineStyle3.copyWith(
                 color: AppStyles.bgColor,
               ),
             ),
@@ -56,7 +56,7 @@ class Hotel extends StatelessWidget {
             padding: const EdgeInsets.only(left: 15.0),
             child: Text(
               "${hotel['price_per_night']}€ / night",
-              style: AppStyles.headlineStyle1.copyWith(
+              style: AppStyles.headLineStyle1.copyWith(
                 color: AppStyles.kakiColor,
               ),
             ),

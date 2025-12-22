@@ -11,8 +11,8 @@ class TextStyleThird extends StatelessWidget {
     return Text(
       text,
       style: isColor == null
-          ? AppStyles.headlineStyle3.copyWith(color: Colors.white)
-          : AppStyles.headlineStyle3,
+          ? AppStyles.headLineStyle3.copyWith(color: Colors.white)
+          : AppStyles.headLineStyle3,
     );
   }
 }
