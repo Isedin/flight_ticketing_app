@@ -1,6 +1,8 @@
 import 'package:flight_ticketing_app/base/res/media.dart';
 import 'package:flight_ticketing_app/base/res/styles/app_styles.dart';
 import 'package:flight_ticketing_app/base/widgets/heading_text.dart';
+import 'package:flight_ticketing_app/base/widgets/text_style_fourth.dart';
+import 'package:flight_ticketing_app/base/widgets/text_style_third.dart';
 import 'package:fluentui_icons/fluentui_icons.dart';
 import 'package:flutter/material.dart';
 
@@ -90,6 +92,66 @@ class ProfileScreen extends StatelessWidget {
           ),
           SizedBox(height: 8),
           Divider(color: Colors.grey.shade300),
+          Stack(
+            children: [
+              Container(
+                height: 90,
+                width: double.infinity,
+                decoration: BoxDecoration(
+                  color: AppStyles.primaryColor,
+                  borderRadius: BorderRadius.circular(18),
+                ),
+              ),
+              Container(
+                padding: const EdgeInsets.symmetric(
+                  horizontal: 20,
+                  vertical: 15,
+                ),
+                child: Row(
+                  children: [
+                    CircleAvatar(
+                      maxRadius: 25,
+                      backgroundColor: Colors.white,
+                      child: Icon(
+                        FluentSystemIcons.ic_fluent_lightbulb_filament_filled,
+                        color: AppStyles.primaryColor,
+                        size: 27,
+                      ),
+                    ),
+                    const SizedBox(width: 8),
+                    Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: [
+                        TextStyleThird(
+                          text: "You've got a new award",
+                          isColor: null,
+                        ),
+                        Text(
+                          "You have 95 flights in a year",
+                          style: TextStyle(
+                            color: Colors.white.withAlpha(200),
+                            fontWeight: FontWeight.w500,
+                          ),
+                        ),
+                        const SizedBox(height: 5),
+                      ],
+                    ),
+                  ],
+                ),
+              ),
+              Positioned(
+                top: -40,
+                right: -45,
+                child: Container(
+                  padding: const EdgeInsets.all(30),
+                  decoration: BoxDecoration(
+                    shape: BoxShape.circle,
+                    border: Border.all(width: 18, color: Color(0xFF264CD2)),
+                  ),
+                ),
+              ),
+            ],
+          ),
         ],
       ),
     );
