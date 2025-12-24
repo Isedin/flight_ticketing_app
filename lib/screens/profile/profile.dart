@@ -1,7 +1,7 @@
 import 'package:flight_ticketing_app/base/res/media.dart';
 import 'package:flight_ticketing_app/base/res/styles/app_styles.dart';
+import 'package:flight_ticketing_app/base/widgets/app_column_text_layout.dart';
 import 'package:flight_ticketing_app/base/widgets/heading_text.dart';
-import 'package:flight_ticketing_app/base/widgets/text_style_fourth.dart';
 import 'package:flight_ticketing_app/base/widgets/text_style_third.dart';
 import 'package:fluentui_icons/fluentui_icons.dart';
 import 'package:flutter/material.dart';
@@ -151,6 +151,128 @@ class ProfileScreen extends StatelessWidget {
                 ),
               ),
             ],
+          ),
+          const SizedBox(height: 25),
+          Text("Accumulated miles", style: AppStyles.headLineStyle2),
+          Container(
+            padding: const EdgeInsets.symmetric(horizontal: 15),
+            decoration: BoxDecoration(
+              color: AppStyles.bgColor,
+              borderRadius: BorderRadius.circular(18),
+              // boxShadow: [
+              //   BoxShadow(
+              //     color: Colors.grey.shade200,
+              //     blurRadius: 1,
+              //     spreadRadius: 1,
+              //   ),
+              // ],
+            ),
+            child: Column(
+              children: [
+                const SizedBox(height: 15),
+                Text(
+                  "192802",
+                  style: TextStyle(
+                    fontSize: 45,
+                    fontWeight: FontWeight.w600,
+                    color: AppStyles.textColor,
+                  ),
+                ),
+                const SizedBox(height: 15),
+                // row -> text
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  children: [
+                    Text(
+                      "Miles accrued",
+                      style: AppStyles.headLineStyle4.copyWith(fontSize: 16),
+                    ),
+                    Text(
+                      "23 May 2023",
+                      style: AppStyles.headLineStyle4.copyWith(fontSize: 16),
+                    ),
+                  ],
+                ),
+                const SizedBox(height: 4),
+                Divider(color: Colors.grey.shade300),
+                const SizedBox(height: 4),
+                // row -> column
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  children: [
+                    AppColumnTextLayout(
+                      topText: "23 402",
+                      bottomText: "Miles",
+                      alignment: CrossAxisAlignment.start,
+                      isColor: false,
+                    ),
+                    // column
+                    AppColumnTextLayout(
+                      topText: "Airline CO",
+                      bottomText: "Received from",
+                      alignment: CrossAxisAlignment.end,
+                      isColor: false,
+                    ),
+                  ],
+                ),
+                const SizedBox(height: 4),
+                Divider(color: Colors.grey.shade300),
+                const SizedBox(height: 4),
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  children: [
+                    AppColumnTextLayout(
+                      topText: "2302",
+                      bottomText: "Miles",
+                      alignment: CrossAxisAlignment.start,
+                      isColor: false,
+                    ),
+                    // column
+                    AppColumnTextLayout(
+                      topText: "German Airlines",
+                      bottomText: "Received from",
+                      alignment: CrossAxisAlignment.end,
+                      isColor: false,
+                    ),
+                  ],
+                ),
+                const SizedBox(height: 4),
+                Divider(color: Colors.grey.shade300),
+                const SizedBox(height: 4),
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  children: [
+                    AppColumnTextLayout(
+                      topText: "5602",
+                      bottomText: "Miles",
+                      alignment: CrossAxisAlignment.start,
+                      isColor: false,
+                    ),
+                    // column
+                    AppColumnTextLayout(
+                      topText: "Argent Airlines",
+                      bottomText: "Received from",
+                      alignment: CrossAxisAlignment.end,
+                      isColor: false,
+                    ),
+                  ],
+                ),
+                // text
+                const SizedBox(height: 25),
+                InkWell(
+                  onTap: () {
+                    print("How to get more miles");
+                  },
+                  child: Text(
+                    "How to get more miles",
+                    style: AppStyles.textStyle.copyWith(
+                      color: AppStyles.primaryColor,
+                      fontWeight: FontWeight.w500,
+                    ),
+                  ),
+                ),
+              ],
+            ),
           ),
         ],
       ),
