@@ -3,6 +3,7 @@ import 'package:flight_ticketing_app/base/res/media.dart';
 import 'package:flight_ticketing_app/base/res/styles/app_styles.dart';
 import 'package:flight_ticketing_app/base/utils/app_json.dart';
 import 'package:flight_ticketing_app/base/widgets/app_double_text.dart';
+import 'package:flight_ticketing_app/base/widgets/heading_text.dart';
 import 'package:flight_ticketing_app/base/widgets/ticket_view.dart';
 import 'package:flight_ticketing_app/screens/home/widgets/hotel.dart';
 import 'package:fluentui_icons/fluentui_icons.dart';
@@ -31,7 +32,7 @@ class HomeScreen extends StatelessWidget {
                       children: [
                         Text("Good Morning", style: AppStyles.headLineStyle3),
                         const SizedBox(height: 5),
-                        Text("Book Tickets", style: AppStyles.headLineStyle1),
+                        HeadingText(text: "Book Tickets", isColor: false),
                       ],
                     ),
                     Container(

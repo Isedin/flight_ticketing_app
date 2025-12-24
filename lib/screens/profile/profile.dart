@@ -1,5 +1,7 @@
 import 'package:flight_ticketing_app/base/res/media.dart';
 import 'package:flight_ticketing_app/base/res/styles/app_styles.dart';
+import 'package:flight_ticketing_app/base/widgets/heading_text.dart';
+import 'package:fluentui_icons/fluentui_icons.dart';
 import 'package:flutter/material.dart';
 
 class ProfileScreen extends StatelessWidget {
@@ -14,6 +16,7 @@ class ProfileScreen extends StatelessWidget {
         children: [
           const Padding(padding: EdgeInsets.only(top: 40)),
           Row(
+            crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               // shows the logo
               Container(
@@ -32,23 +35,61 @@ class ProfileScreen extends StatelessWidget {
               Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
-                  Text("Book Tickets", style: AppStyles.headLineStyle1),
+                  HeadingText(text: "Book Tickets", isColor: false),
                   const SizedBox(height: 2),
                   Text("New-York", style: AppStyles.headLineStyle4),
+                  const SizedBox(height: 8),
+                  // location container
                   Container(
-                    width: 100,
-                    height: 25,
+                    padding: const EdgeInsets.symmetric(
+                      horizontal: 3,
+                      vertical: 3,
+                    ),
                     // decoration
                     decoration: BoxDecoration(
                       borderRadius: BorderRadius.circular(100),
                       color: AppStyles.profileLocationColor,
                     ),
                     // child -> row -> icon + text
+                    child: Row(
+                      children: [
+                        Container(
+                          padding: EdgeInsets.all(3),
+                          decoration: BoxDecoration(
+                            shape: BoxShape.circle,
+                            color: AppStyles.profileTextColor,
+                          ),
+                          child: const Icon(
+                            FluentSystemIcons.ic_fluent_shield_filled,
+                            color: Colors.white,
+                            size: 15,
+                          ),
+                        ),
+                        const SizedBox(width: 5),
+                        Text(
+                          "Premium status",
+                          style: TextStyle(
+                            color: AppStyles.profileTextColor,
+                            fontWeight: FontWeight.w500,
+                          ),
+                        ),
+                      ],
+                    ),
                   ),
                 ],
               ),
+              Expanded(child: Container()),
+              Text(
+                "Edit",
+                style: TextStyle(
+                  color: AppStyles.primaryColor,
+                  fontWeight: FontWeight.w300,
+                ),
+              ),
             ],
           ),
+          SizedBox(height: 8),
+          Divider(color: Colors.grey.shade300),
         ],
       ),
     );

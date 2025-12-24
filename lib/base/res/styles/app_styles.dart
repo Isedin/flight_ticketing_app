@@ -16,6 +16,7 @@ class AppStyles {
   static const Color dotColor = Color(0xFF8ACCF7);
   static const Color planeSecondColor = Color(0xFFBACCF7);
   static const Color profileLocationColor = Color(0xFFFEF4F3);
+  static const Color profileTextColor = Color(0xFF526799);
 
   static const TextStyle textStyle = TextStyle(
     fontSize: 16,
